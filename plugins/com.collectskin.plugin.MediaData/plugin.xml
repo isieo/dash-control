@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.collectskin.plugin.MediaData" version="0.01" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>MediaData</name>
+    <js-module name="MediaData" src="www/MediaData.js">
+        <clobbers target="cordova.plugins.MediaData" />
+    </js-module>
+
+  <platform name="android">
+      <source-file src="src/MediaData.java" target-dir="src/com/collectskin/plugin" />
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      </config-file>
+      <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="MediaData" >
+              <param name="android-package" value="com.collectskin.plugin.MediaData"/>
+          </feature>
+      </config-file>
+  </platform>
+
+</plugin>
